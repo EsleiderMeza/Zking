@@ -1,0 +1,79 @@
+--- NUEVO ESCANEO DE ARCHIVO: ./crypto.py ---
+--- NUEVO ESCANEO DE ARCHIVO: ./analyzer.py ---
+--- NUEVO ESCANEO DE ARCHIVO: ./ai_analyzer.py ---
+--- NUEVO ESCANEO DE ARCHIVO: ./secreto.txt ---
+--- NUEVO ESCANEO DE ARCHIVO: ./scanner.py ---
+--- NUEVO ESCANEO DE ARCHIVO: ./zking.py ---
+--- NUEVO ESCANEO DE ARCHIVO: ./crypto.py ---
+[+] Archivo escaneado: ./crypto.py
+La huella digital HASH es: 537881556
+..............................
+--- NUEVO ESCANEO DE ARCHIVO: ./analyzer.py ---
+[+] Archivo escaneado: ./analyzer.py
+La huella digital HASH es: 619890599
+..............................
+--- NUEVO ESCANEO DE ARCHIVO: ./ai_analyzer.py ---
+[+] Archivo escaneado: ./ai_analyzer.py
+La huella digital HASH es: 440960261
+..............................
+--- NUEVO ESCANEO DE ARCHIVO: ./secreto.txt ---
+[ALERTA] se encontro un patron sospechoso: db_password = super_secreto_123
+Consejo de la IA:
+RIESGO: El secreto está codificado, exponiéndolo a cualquiera que revise el código fuente.
+SOLUCIÓN: Usa variables de entorno o un sistema de gestión de secretos (vault).
+--------------------
+[ALERTA] se encontro un patron sospechoso: secret = 3434
+Consejo de la IA:
+RIESGO: Revela información sensible en el código fuente.
+SOLUCIÓN: Usa variables de entorno o gestores secretos.
+--------------------
+[ALERTA] se encontro un patron sospechoso: token
+Consejo de la IA:
+RIESGO: Si el token es sensible, exponerlo en código es un riesgo de seguridad grave.
+SOLUCIÓN: Usa variables de entorno o gestión de secretos para almacenar el valor.
+--------------------
+[ALERTA] se encontro un patron sospechoso: key
+Consejo de la IA:
+RIESGO: Genera un salto de línea no deseado que romperá el formato esperado.
+SOLUCIÓN: Simplemente eliminar el carácter de nueva línea (`\n`) si no es necesario.
+--------------------
+[+] Archivo escaneado: ./secreto.txt
+La huella digital HASH es: 861800724
+..............................
+--- NUEVO ESCANEO DE ARCHIVO: ./scanner.py ---
+[ALERTA] se encontro un patron sospechoso: # os.listdir nos da solo los nombres sueltos (ej. "secreto.txt")
+Consejo de la IA:
+RIESGO: Solo devuelve nombres sueltos (ej. "archivo.txt"), sin ruta completa.
+SOLUCIÓN: Usar `os.path.join(ruta, nombre)` para construir rutas válidas.
+--------------------
+[ALERTA] se encontro un patron sospechoso: # Creamos la ruta completa (ej. "./secreto.txt")
+Consejo de la IA:
+RIESGO: El riesgo es que la construcción de la ruta no maneje separadores o casos especiales.
+SOLUCIÓN: Utilizar funciones de la librería `pathlib` o `os.path` para generar rutas seguras.
+--------------------
+[+] Archivo escaneado: ./scanner.py
+La huella digital HASH es: 606927345
+..............................
+--- NUEVO ESCANEO DE ARCHIVO: ./reporte_auditoria.txt ---
+[ALERTA] se encontro un patron sospechoso: --- NUEVO ESCANEO DE ARCHIVO: ./secreto.txt ---
+Consejo de la IA:
+RIESGO: Se filtra el nombre de archivos sensibles, facilitando reconocimiento de información.
+SOLUCIÓN: Generalizar o anonimizar nombres de archivos en todos los mensajes de log.
+--------------------
+[+] Archivo escaneado: ./reporte_auditoria.txt
+La huella digital HASH es: 2391255
+..............................
+--- NUEVO ESCANEO DE ARCHIVO: ./zking.py ---
+[ALERTA] se encontro un patron sospechoso: palabras_clave = ["password", "token", "key", "secret"]
+Consejo de la IA:
+RIESGO: Exponer términos sensibles directamente. No deben codificarse estáticamente en el código fuente.
+SOLUCIÓN: Cargar esta lista desde un archivo de configuración o variables de entorno.
+--------------------
+[+] Archivo escaneado: ./zking.py
+La huella digital HASH es: 247578390
+..............................
+
+==============================
+--- REPORTE GLOBAL DE AMENAZAS EN LA CARPETA ---
+{'password': 2, 'secret': 4, 'token': 1, 'key': 1}
+================================
